@@ -1,8 +1,5 @@
 # Roadmap.sh - HTML Projects
 
-<<<<<<< HEAD
-Repositório técnico desenvolvido com o propósito de documentar, estruturar e consolidar a jornada de estudos práticos nos desafios de HTML do [https://roadmap.sh](https://roadmap.sh/projects/basic-html-website).
-=======
 Repositório técnico desenvolvido com o propósito de documentar, estruturar e consolidar a jornada de estudos práticos nos desafios de HTML do [roadmap.sh](https://roadmap.sh/projects/portfolio-website). 
 >>>>>>> 9ea2da3 (feat: adiciona projeto portfolio-css com estilos, responsividade, paginas e readme)
 
