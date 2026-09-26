@@ -1,0 +1,254 @@
+/* =========================================
+   1. Variáveis Globais & Reset
+   ========================================= */
+:root {
+    --bg-color: #f8fafc;
+    --card-bg-light: #ffffff;
+    --card-bg-dark: #1e293b;
+    --text-primary: #0f172a;
+    --text-secondary: #475569;
+    --text-light: #f8fafc;
+    --text-muted: #94a3b8;
+    --border-color: #e2e8f0;
+    --star-color: #f59e0b;
+    --radius: 16px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 40px 20px;
+}
+
+/* =========================================
+   2. Contentor Principal (Grid Layout)
+   ========================================= */
+.testimonials-container {
+    width: 100%;
+    max-width: 1100px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+/* Estilo Base dos Cartões */
+.testimonial-card {
+    background-color: var(--card-bg-light);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius);
+    padding: 30px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02), 0 2px 4px -1px rgba(0, 0, 0, 0.01);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* =========================================
+   3. Cartão 1: Estilo Balão de Fala (Bubble)
+   ========================================= */
+.bubble-card {
+    background-color: var(--card-bg-dark);
+    color: var(--text-light);
+    border: none;
+}
+
+.bubble-content p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.highlight-text {
+    font-weight: 600;
+    margin-bottom: 25px !important;
+}
+
+.author-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.author-info h3 {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text-light);
+}
+
+.author-info span {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+/* =========================================
+   4. Cartão 2: Estilo Clássico
+   ========================================= */
+.classic-card .author-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.avatar-large {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.classic-card h3 {
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.classic-card span {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+}
+
+.classic-card p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--text-secondary);
+}
+
+/* =========================================
+   5. Cartão 3: Estilo Imagem de Fundo (Destaque)
+   ========================================= */
+.image-bg-card {
+    background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.6)), url('https://via.placeholder.com/400x400');
+    background-size: cover;
+    background-position: center;
+    min-height: 320px;
+    border: none;
+}
+
+/* =========================================
+   6. Cartão 4: Estilo com Avaliação (Rating)
+   ========================================= */
+.rating-card .stars {
+    color: var(--star-color);
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
+.rating-card h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 4px;
+}
+
+.rating-card .role {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    display: block;
+    margin-bottom: 20px;
+}
+
+.rating-card p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--text-secondary);
+}
+
+/* =========================================
+   7. Cartão 5: Estilo Carrossel / Navegação
+   ========================================= */
+.carousel-card {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 40px;
+}
+
+.carousel-card p {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    max-width: 800px;
+    margin: 0 auto 30px auto;
+    color: var(--text-secondary);
+}
+
+.carousel-navigation {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 15px;
+}
+
+.nav-btn {
+    background: transparent;
+    border: 1px solid var(--border-color);
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-weight: bold;
+    color: var(--text-secondary);
+    transition: background 0.2s;
+}
+
+.nav-btn:hover {
+    background-color: var(--border-color);
+}
+
+.avatars-list {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.mini-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    opacity: 0.6;
+    transition: transform 0.2s, opacity 0.2s;
+}
+
+.mini-avatar.active {
+    opacity: 1;
+    transform: scale(1.15);
+    border: 2px solid var(--text-primary);
+}
+
+.carousel-author {
+    font-size: 0.95rem;
+    font-weight: 600;
+}
+
+/* =========================================
+   8. Responsividade
+   ========================================= */
+@media (max-width: 768px) {
+    .testimonials-grid {
+        grid-template-columns: 1fr;
+    }
+}

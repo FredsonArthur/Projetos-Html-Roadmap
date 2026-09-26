@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testimonial Cards</title>
+    <meta name="description" content="Componente de cartões de depoimentos estruturado com HTML e CSS puro.">
+    <!-- Ligação à folha de estilos do projeto -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <main class="testimonials-container">
+        <!-- Grelha de Depoimentos -->
+        <div class="testimonials-grid">
+
+            <!-- Cartão 1: Estilo Balão de Fala (Speech Bubble) -->
+            <div class="testimonial-card bubble-card">
+                <div class="bubble-content">
+                    <p>I have been solving all the project ideas on roadmap.sh and I am surprised how far I have come from where I started.</p>
+                    <p class="highlight-text">Highly recommended!</p>
+                </div>
+                <div class="author-info">
+                    <img src="https://via.placeholder.com/50" alt="Artem Jones" class="avatar">
+                    <div>
+                        <h3>Artem Jones</h3>
+                        <span>Junior Frontend Developer</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Cartão 2: Estilo Clássico com Imagem Superior -->
+            <div class="testimonial-card classic-card">
+                <div class="author-header">
+                    <img src="https://via.placeholder.com/60" alt="Artem Jones" class="avatar-large">
+                    <div>
+                        <h3>Artem Jones</h3>
+                        <span>Junior Frontend Developer</span>
+                    </div>
+                </div>
+                <p>Since starting my career in 2021, I have only followed one resource, roadmap.sh, it truly helped me go from 0 to having a job and changing the financial trajectory of my family.</p>
+            </div>
+
+            <!-- Cartão 3: Estilo Foco em Imagem Grande e Recuada -->
+            <div class="testimonial-card image-bg-card">
+                <!-- Espaço para imagem de fundo ou grande destaque visual -->
+                <div class="image-overlay"></div>
+            </div>
+
+            <!-- Cartão 4: Estilo com Avaliação por Estrelas -->
+            <div class="testimonial-card rating-card">
+                <div class="stars">
+                    ★★★★★
+                </div>
+                <h3>Jackie Mackle</h3>
+                <span class="role">Engineering Manager</span>
+                <p>I find myself recommending roadmap.sh to all the internees or junior developers. It's a great way to skill up and grow in your career.</p>
+            </div>
+
+        </div>
+
+        <!-- Cartão 5: Estilo Carrossel / Seleção de Vários Avatares -->
+        <div class="testimonial-card carousel-card">
+            <p>roadmap.sh is an incredible resource. I was fortunate to discover it during my university days in 2018. Back then, it was just a single repository with three images. It's amazing to see how much impact it has had on millions of lives since then.</p>
+            
+            <div class="carousel-navigation">
+                <button class="nav-btn" aria-label="Anterior">&lt;</button>
+                <div class="avatars-list">
+                    <img src="https://via.placeholder.com/40" alt="Utilizador 1" class="mini-avatar">
+                    <img src="https://via.placeholder.com/40" alt="Utilizador 2" class="mini-avatar active">
+                    <img src="https://via.placeholder.com/40" alt="Utilizador 3" class="mini-avatar">
+                </div>
+                <button class="nav-btn" aria-label="Seguinte">&gt;</button>
+            </div>
+            <h3 class="carousel-author">Artem Jones</h3>
+        </div>
+    </main>
+
+</body>
+</html>
