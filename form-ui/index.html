@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form UI - Acessível</title>
+    <meta name="description" content="Componente de formulário acessível estruturado com HTML e CSS puro.">
+    <!-- Ligação à folha de estilos do projeto -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <main class="form-container">
+        <div class="form-grid">
+            
+            <!-- Coluna Esquerda: Formulário -->
+            <section class="form-section">
+                <form action="#" method="POST" novalidate>
+                    
+                    <!-- Campo: Full Name -->
+                    <div class="form-group">
+                        <label for="fullname">Full Name</label>
+                        <input 
+                            type="text" 
+                            id="fullname" 
+                            name="fullname" 
+                            placeholder="What should we call you?" 
+                            aria-required="true">
+                    </div>
+
+                    <!-- Campo: Email (com erro simulado) -->
+                    <div class="form-group error">
+                        <label for="email">Email</label>
+                        <input 
+                            type="email" 
+                            id="email" 
+                            name="email" 
+                            value="john@doe.com" 
+                            aria-required="true" 
+                            aria-invalid="true" 
+                            aria-describedby="email-error">
+                        <span id="email-error" class="error-message">Email is already taken</span>
+                    </div>
+
+                    <!-- Campo: Enter Password -->
+                    <div class="form-group">
+                        <label for="password">Enter Password</label>
+                        <div class="password-wrapper">
+                            <input 
+                                type="password" 
+                                id="password" 
+                                name="password" 
+                                value="xxxxxxxx" 
+                                aria-required="true">
+                            <button type="button" class="toggle-password" aria-label="Password is hidden">
+                                👁️
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Campo: Confirm Password -->
+                    <div class="form-group">
+                        <label for="confirm-password">Confirm Password</label>
+                        <div class="password-wrapper">
+                            <input 
+                                type="password" 
+                                id="confirm-password" 
+                                name="confirm-password" 
+                                value="xxxxxxxx" 
+                                aria-required="true">
+                            <button type="button" class="toggle-password" aria-label="Password is hidden">
+                                👁️
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Botão de Submissão -->
+                    <button type="submit" class="submit-btn">Update Profile</button>
+
+                </form>
+            </section>
+
+            <!-- Coluna Direita: Progresso e Lista de Verificação -->
+            <aside class="completeness-section">
+                <!-- Indicador Circular de Progresso -->
+                <div class="progress-circle-container">
+                    <div class="progress-circle">
+                        <span class="progress-percentage">65%</span>
+                    </div>
+                    <h2 class="progress-title">Profile Completeness</h2>
+                </div>
+
+                <!-- Lista de Requisitos -->
+                <ul class="requirements-list">
+                    <li class="completed">Create Account</li>
+                    <li class="completed">Update Roadmap Progress</li>
+                    <li class="completed">Setup Public Profile</li>
+                    <li class="pending active-requirement">Complete your first project</li>
+                    <li class="pending">Invite your Friends</li>
+                </ul>
+            </aside>
+
+        </div>
+    </main>
+
+</body>
+</html>
