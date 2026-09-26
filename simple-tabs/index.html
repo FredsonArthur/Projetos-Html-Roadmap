@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Simple Tabs</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="card">
+    <nav class="tabs" role="tablist">
+      <button class="tab-btn active" data-tab="1" role="tab" aria-selected="true">First Tab</button>
+      <button class="tab-btn" data-tab="2" role="tab" aria-selected="false">Second Tab</button>
+      <button class="tab-btn" data-tab="3" role="tab" aria-selected="false">Third Tab</button>
+      <button class="tab-btn" data-tab="4" role="tab" aria-selected="false">Fourth Tab</button>
+    </nav>
+
+    <p class="instructions">
+      Clicking each tab should hide the content of the other tab and show the
+      content of clicked tab. By default, enable the first tab.
+    </p>
+
+    <div class="tab-content active" id="tab-1" role="tabpanel">
+      First Tab content to be displayed here.
+    </div>
+    <div class="tab-content" id="tab-2" role="tabpanel">
+      Second Tab content to be displayed here.
+    </div>
+    <div class="tab-content" id="tab-3" role="tabpanel">
+      Third Tab content to be displayed here.
+    </div>
+    <div class="tab-content" id="tab-4" role="tabpanel">
+      Fourth Tab content to be displayed here.
+    </div>
+
+    <p class="footnote">Add some dummy content or just add a simple text showing the tab</p>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
