@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Datepicker UI</title>
+    <meta name="description" content="Componente estático de Datepicker estruturado com HTML e CSS puro.">
+    <!-- Ligação à folha de estilos do projeto -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <main class="datepicker-container">
+        <!-- Componente do Datepicker -->
+        <div class="datepicker">
+            
+            <!-- Campo de Entrada e Botão com Ícone -->
+            <div class="datepicker-input-group">
+                <input type="text" placeholder="dd / mm / yyyy" readonly class="datepicker-input">
+                <button type="button" class="datepicker-btn" aria-label="Abrir calendário">
+                    📅
+                </button>
+            </div>
+
+            <!-- Painel do Calendário (Posicionado Absolutamente) -->
+            <div class="calendar-dropdown">
+                
+                <!-- Cabeçalho do Mês -->
+                <div class="calendar-header">
+                    <button type="button" class="nav-arrow" aria-label="Mês anterior">&lt;</button>
+                    <span class="calendar-month">December 2022</span>
+                    <button type="button" class="nav-arrow" aria-label="Mês seguinte">&gt;</button>
+                </div>
+
+                <!-- Dias da Semana -->
+                <div class="calendar-weekdays">
+                    <span>s</span>
+                    <span>M</span>
+                    <span>T</span>
+                    <span>W</span>
+                    <span>T</span>
+                    <span>F</span>
+                    <span>S</span>
+                </div>
+
+                <!-- Grelha de Dias do Mês -->
+                <div class="calendar-grid">
+                    <!-- Espaços vazios para alinhar o dia 1 (quinta-feira) -->
+                    <span class="day empty"></span>
+                    <span class="day empty"></span>
+                    <span class="day empty"></span>
+                    <span class="day empty"></span>
+                    
+                    <!-- Dias de 1 a 31 -->
+                    <span class="day">1</span>
+                    <span class="day">2</span>
+                    <span class="day">3</span>
+                    <span class="day">4</span>
+                    <span class="day">5</span>
+                    <span class="day">6</span>
+                    <span class="day">7</span>
+                    <span class="day">8</span>
+                    <span class="day">9</span>
+                    <span class="day">10</span>
+                    <span class="day">11</span>
+                    <span class="day">12</span>
+                    <span class="day">13</span>
+                    <span class="day">14</span>
+                    <span class="day">15</span>
+                    <span class="day">16</span>
+                    <span class="day">17</span>
+                    <span class="day">18</span>
+                    <span class="day">19</span>
+                    <span class="day">20</span>
+                    <span class="day">21</span>
+                    <span class="day">22</span>
+                    <span class="day">23</span>
+                    <span class="day">24</span>
+                    <span class="day">25</span>
+                    <span class="day">26</span>
+                    <span class="day">27</span>
+                    <span class="day">28</span>
+                    <span class="day">29</span>
+                    <span class="day">30</span>
+                    <span class="day">31</span>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+</body>
+</html>
