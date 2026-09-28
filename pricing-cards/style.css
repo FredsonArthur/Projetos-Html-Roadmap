@@ -1,0 +1,213 @@
+:root {
+  --ink: #111;
+  --muted: #444;
+  --accent: #f0644d;
+  --accent-dark: #d94b35;
+  --surface: #fff;
+  --surface-alt: #f4f4f4;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  color: var(--ink);
+  background: var(--surface);
+}
+
+main {
+  padding: 72px 24px;
+}
+
+/* Esconde visualmente, mas mantém acessível para leitores de tela */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Linha de cards: gap cuida do espaçamento entre irmãos,
+   e align-items: stretch (padrão) deixa todos com a mesma altura */
+.pricing-row {
+  display: flex;
+  align-items: stretch;
+  gap: 32px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* Estilo base compartilhado pelos três cards */
+.card {
+  position: relative;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 40px 32px 32px;
+  background: var(--surface);
+  border: 2px solid var(--ink);
+  border-radius: 24px;
+  text-align: center;
+}
+
+/* Card em destaque: levemente maior e com sombra */
+.card--featured {
+  transform: scale(1.05);
+  z-index: 1;
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.15);
+}
+
+/* Selo "Most popular" sobre a borda superior */
+.badge {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: 0;
+  padding: 6px 20px;
+  background: var(--accent);
+  color: #fff;
+  font-weight: 600;
+  font-size: 1rem;
+  white-space: nowrap;
+  border: 2px solid var(--ink);
+  border-radius: 8px;
+}
+
+/* Hierarquia tipográfica: preço > nome do plano > features */
+.plan-name {
+  margin: 0 0 8px;
+  font-size: 1.75rem;
+  font-weight: 700;
+}
+
+.price {
+  margin: 0 0 16px;
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  gap: 6px;
+}
+
+.amount {
+  font-size: 4.25rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.period {
+  font-size: 1.25rem;
+  color: var(--muted);
+}
+
+.card--featured .amount {
+  color: var(--accent);
+}
+
+.tagline {
+  margin: 0 0 24px;
+  padding-bottom: 24px;
+  font-size: 1.1rem;
+  line-height: 1.4;
+  color: var(--muted);
+  border-bottom: 2px solid var(--ink);
+}
+
+/* flex: 1 empurra o botão para o final do card,
+   alinhando os botões mesmo com listas de tamanhos diferentes */
+.features {
+  flex: 1;
+  margin: 0 0 32px;
+  padding: 0;
+  list-style: none;
+  text-align: left;
+}
+
+.features li {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding-block: 8px;
+  font-size: 1.05rem;
+}
+
+/* Ícone de check feito só com CSS */
+.features li::before {
+  content: "\2713";
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  border: 2px solid var(--ink);
+  border-radius: 50%;
+}
+
+/* Botões */
+.button {
+  display: block;
+  padding: 14px 20px;
+  background: var(--surface-alt);
+  color: var(--ink);
+  font-size: 1.15rem;
+  font-weight: 600;
+  text-decoration: none;
+  border: 2px solid var(--ink);
+  border-radius: 10px;
+  transition: background 0.15s ease, color 0.15s ease,
+    box-shadow 0.15s ease, transform 0.15s ease;
+}
+
+.button--primary {
+  background: var(--accent);
+  color: #fff;
+}
+
+/* Hover: muda o fundo E adiciona sombra e leve elevação (não depende só de cor) */
+.button:hover {
+  background: var(--ink);
+  color: #fff;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.25);
+  transform: translateY(-2px);
+}
+
+.button--primary:hover {
+  background: var(--accent-dark);
+}
+
+/* Focus: contorno espesso e visível para navegação por teclado */
+.button:focus-visible {
+  outline: 3px solid var(--ink);
+  outline-offset: 4px;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.25);
+}
+
+/* Responsivo: cards empilhados em telas menores */
+@media (max-width: 900px) {
+  .pricing-row {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    width: 100%;
+    max-width: 420px;
+    flex: none;
+  }
+
+  .card--featured {
+    transform: none;
+    margin-top: 16px; /* espaço pro selo que sobrepõe o topo */
+  }
+}
