@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Media Gallery</title>
+  </head>
+  <body>
+    <header>
+      <h1>Media Gallery</h1>
+      <p>A small collection of photos and one embedded video.</p>
+    </header>
+
+    <main>
+      <!-- Imagem decorativa: alt vazio para leitores de tela ignorarem -->
+      <img
+        src="images/decorative.jpg"
+        alt=""
+        width="800"
+        height="200"
+      />
+
+      <section>
+        <h2>Photo collection</h2>
+
+        <!-- Com legenda (figure + figcaption) -->
+        <figure>
+          <img
+            src="images/photo-01.jpg"
+            alt="Misty forest with tall trees and a mountain in the distance"
+            width="800"
+            height="600"
+          />
+          <figcaption>Photo 1: a quiet forest early in the morning.</figcaption>
+        </figure>
+
+        <figure>
+          <img
+            src="images/photo-02.jpg"
+            alt="Calm lake surrounded by trees under a cloudy sky"
+            width="800"
+            height="600"
+          />
+          <figcaption>Photo 2: a lake on a still, cloudy day.</figcaption>
+        </figure>
+
+        <figure>
+          <img
+            src="images/photo-03.jpg"
+            alt="Sandy beach with waves reaching the shore"
+            width="800"
+            height="600"
+          />
+          <figcaption>Photo 3: waves rolling onto the beach.</figcaption>
+        </figure>
+
+        <!-- Sem legenda: o alt carrega toda a descrição -->
+        <img
+          src="images/photo-04.jpg"
+          alt="Rocky shoreline with the sea meeting large stones"
+          width="800"
+          height="600"
+        />
+
+        <img
+          src="images/photo-05.jpg"
+          alt="Rugged coastline with rocks and open water"
+          width="800"
+          height="600"
+        />
+
+        <img
+          src="images/photo-06.jpg"
+          alt="Waterfall running over rocks surrounded by green vegetation"
+          width="800"
+          height="600"
+        />
+      </section>
+
+      <section>
+        <h2>Video</h2>
+
+        <video
+          controls
+          poster="images/video-poster.jpg"
+          width="640"
+          height="360"
+        >
+          <source src="video/flower.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+          <a href="video/flower.mp4">Download the video</a> instead.
+        </video>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2026 Media Gallery</p>
+    </footer>
+  </body>
+</html>
