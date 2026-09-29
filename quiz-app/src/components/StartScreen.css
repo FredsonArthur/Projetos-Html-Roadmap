@@ -1,0 +1,68 @@
+.start-card {
+  width: 100%;
+  max-width: 480px;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 16px;
+  padding: 40px 32px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.start-card h1 {
+  margin: 0 0 16px 0;
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: #111;
+}
+
+.description {
+  margin: 0 0 24px 0;
+  color: #555;
+  line-height: 1.5;
+}
+
+.rules {
+  margin: 0 0 28px 0;
+  padding: 0;
+  list-style: none;
+  text-align: left;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+}
+
+.rules li {
+  padding: 10px 0;
+  font-size: 0.95rem;
+  color: #333;
+}
+
+.rules li:not(:last-child) {
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.start-btn {
+  width: 100%;
+  padding: 14px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #fff;
+  background: #111;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: opacity 0.15s ease, transform 0.1s ease;
+}
+
+.start-btn:hover {
+  opacity: 0.85;
+}
+
+.start-btn:active {
+  transform: scale(0.99);
+}
+
+.start-btn:focus-visible {
+  outline: 3px solid #111;
+  outline-offset: 3px;
+}
