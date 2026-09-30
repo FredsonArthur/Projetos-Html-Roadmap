@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task Tracker</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="card">
+      <h1>Task Tracker</h1>
+
+      <div class="input-wrapper">
+        <input
+          type="text"
+          id="task-input"
+          placeholder="Start writing and press enter to create task"
+        />
+        <span class="enter-key" aria-hidden="true">⏎</span>
+      </div>
+
+      <!-- Lista preenchida dinamicamente pela função renderTasks() -->
+      <ul class="task-list" id="task-list"></ul>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
