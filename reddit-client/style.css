@@ -1,0 +1,255 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  background: #f0f2f5;
+  margin: 0;
+  min-height: 100vh;
+}
+
+.app-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 20px 28px;
+  background: #fff;
+  border-bottom: 1px solid #ddd;
+}
+
+.app-header h1 {
+  margin: 0;
+  font-size: 1.4rem;
+  color: #111;
+}
+
+.add-lane-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid #111;
+  background: #fff;
+  font-size: 1.4rem;
+  line-height: 1;
+  cursor: pointer;
+  color: #111;
+}
+
+.add-lane-btn:hover {
+  background: #111;
+  color: #fff;
+}
+
+.lanes-container {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  padding: 20px;
+  overflow-x: auto;
+}
+
+/* --- Lane individual --- */
+.lane {
+  flex: 0 0 340px;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  overflow: hidden;
+  max-height: calc(100vh - 110px);
+  display: flex;
+  flex-direction: column;
+}
+
+.lane-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 18px;
+  border-bottom: 1px solid #eee;
+  position: relative;
+}
+
+.lane-header h2 {
+  margin: 0;
+  font-size: 1.05rem;
+  color: #111;
+}
+
+.lane-menu-btn {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  color: #555;
+  padding: 4px 8px;
+}
+
+.lane-menu-btn:hover {
+  color: #111;
+}
+
+/* Menu suspenso (Refresh / Delete) */
+.lane-menu {
+  position: absolute;
+  top: 100%;
+  right: 14px;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+  overflow: hidden;
+  z-index: 5;
+}
+
+.lane-menu.hidden {
+  display: none;
+}
+
+.lane-menu button {
+  display: block;
+  width: 100%;
+  padding: 12px 20px;
+  background: #fff;
+  border: none;
+  text-align: left;
+  font-size: 0.95rem;
+  color: #111;
+  cursor: pointer;
+}
+
+.lane-menu button:hover {
+  background: #f5f5f5;
+}
+
+.lane-menu button:not(:last-child) {
+  border-bottom: 1px solid #eee;
+}
+
+/* Lista de posts dentro da lane */
+.post-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  overflow-y: auto;
+}
+
+.post-item {
+  display: flex;
+  gap: 12px;
+  padding: 14px 18px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.post-score {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 0.85rem;
+  color: #666;
+  min-width: 32px;
+}
+
+.post-score .arrow {
+  font-size: 0.9rem;
+  color: #999;
+}
+
+.post-content a {
+  color: #111;
+  text-decoration: none;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+.post-content a:hover {
+  text-decoration: underline;
+}
+
+.post-author {
+  display: block;
+  margin-top: 4px;
+  font-size: 0.8rem;
+  color: #888;
+}
+
+/* Estados de carregamento e erro dentro da lane */
+.lane-status {
+  padding: 40px 18px;
+  text-align: center;
+  color: #666;
+}
+
+.lane-status.error {
+  color: #b71c1c;
+}
+
+/* --- Modal --- */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 20;
+}
+
+.modal-overlay.hidden {
+  display: none;
+}
+
+.modal {
+  width: 100%;
+  max-width: 380px;
+  background: #fff;
+  border-radius: 14px;
+  padding: 28px;
+}
+
+.modal-label {
+  margin: 0 0 12px 0;
+  font-weight: 600;
+  color: #111;
+}
+
+#subreddit-input {
+  width: 100%;
+  padding: 12px 14px;
+  font-size: 1rem;
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  outline: none;
+  margin-bottom: 8px;
+}
+
+#subreddit-input:focus {
+  border-color: #111;
+}
+
+.modal-error {
+  margin: 0 0 12px 0;
+  color: #c62828;
+  font-size: 0.9rem;
+}
+
+.modal-error.hidden {
+  display: none;
+}
+
+.add-subreddit-btn {
+  width: 100%;
+  padding: 14px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #fff;
+  background: #111;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.add-subreddit-btn:hover {
+  opacity: 0.85;
+}

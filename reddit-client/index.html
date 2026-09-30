@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reddit Client</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="app-header">
+      <h1>Reddit Client</h1>
+      <button type="button" id="add-lane-btn" class="add-lane-btn" aria-label="Add subreddit lane">
+        +
+      </button>
+    </header>
+
+    <!-- Container onde cada lane de subreddit é inserida dinamicamente -->
+    <main id="lanes-container" class="lanes-container"></main>
+
+    <!-- Modal para adicionar uma nova lane, escondido por padrão -->
+    <div class="modal-overlay hidden" id="modal-overlay">
+      <div class="modal">
+        <p class="modal-label">Enter the name of subreddit</p>
+        <input
+          type="text"
+          id="subreddit-input"
+          placeholder="e.g. javascript"
+          autocomplete="off"
+        />
+        <p class="modal-error hidden" id="modal-error"></p>
+        <button type="button" id="add-subreddit-btn" class="add-subreddit-btn">
+          Add Subreddit
+        </button>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
