@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GitHub Repository Finder</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="card">
+      <header class="app-header">
+        <span class="logo-icon"></span>
+        <h1>GitHub Repository Finder</h1>
+      </header>
+
+      <label for="language-select" class="visually-hidden">
+        Select a programming language
+      </label>
+      <select id="language-select">
+        <option value="" selected disabled>Select a Language</option>
+      </select>
+
+      <!-- Área que alterna entre: mensagem vazia, loading, erro ou o card do repositório -->
+      <div id="result-area" class="result-area">
+        <p class="placeholder-message">Please select a language</p>
+      </div>
+
+      <button type="button" id="refresh-btn" class="refresh-btn hidden">
+        Refresh
+      </button>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
