@@ -1,0 +1,90 @@
+.current-weather {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 16px;
+  padding: 28px;
+  margin-bottom: 28px;
+  backdrop-filter: blur(6px);
+}
+
+.current-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.current-header h2 {
+  margin: 0;
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+.refresh-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.refresh-btn:hover {
+  background: rgba(255, 255, 255, 0.35);
+}
+
+.refresh-btn:focus-visible {
+  outline: 3px solid #fff;
+  outline-offset: 2px;
+}
+
+.current-main {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.weather-icon {
+  font-size: 4rem;
+  line-height: 1;
+}
+
+.temperature {
+  font-size: 3.5rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.weather-label {
+  margin: 8px 0 24px 0;
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.current-details {
+  display: flex;
+  gap: 32px;
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  padding-top: 16px;
+}
+
+.detail-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.detail-label {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.detail-value {
+  font-size: 1.2rem;
+  font-weight: 700;
+}
