@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Custom Dropdown</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main>
+      <div class="dropdown" id="dropdown">
+        <button
+          type="button"
+          class="dropdown-trigger"
+          id="dropdown-trigger"
+          aria-haspopup="listbox"
+          aria-expanded="false"
+        >
+          <span id="dropdown-label">Select an Item</span>
+          <span class="arrow" aria-hidden="true">⌄</span>
+        </button>
+
+        <ul class="dropdown-list hidden" id="dropdown-list" role="listbox">
+          <li class="dropdown-item" role="option" data-value="first">First Item</li>
+          <li class="dropdown-item" role="option" data-value="second">Second Item</li>
+          <li class="dropdown-item" role="option" data-value="third">Third Item</li>
+          <li class="dropdown-item" role="option" data-value="fourth">Fourth Item</li>
+          <li class="dropdown-item" role="option" data-value="fifth">Fifth Item</li>
+        </ul>
+      </div>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
