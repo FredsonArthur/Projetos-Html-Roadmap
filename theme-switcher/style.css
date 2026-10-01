@@ -1,0 +1,171 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  background: #f0f2f5;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+}
+
+/* --- Camada de tokens: define o tema "Light" como padrão em :root --- */
+:root {
+  --color-bg: #ffffff;
+  --color-surface: #ffffff;
+  --color-text: #111111;
+  --color-text-muted: #6b6b6b;
+  --color-accent: #3b5bdb;
+  --color-accent-text: #ffffff;
+  --color-border: #e2e2e2;
+  --radius-md: 14px;
+  --radius-sm: 8px;
+}
+
+/* Esconde visualmente os radios, mas mantém focáveis por teclado */
+.theme-input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.theme-root {
+  width: 100%;
+  max-width: 420px;
+}
+
+/* --- Card: usa só os tokens, nunca cores fixas --- */
+.card {
+  background: var(--color-surface);
+  color: var(--color-text);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 28px;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.theme-switch {
+  display: flex;
+  gap: 4px;
+  padding: 4px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  margin-bottom: 28px;
+}
+
+.theme-option {
+  flex: 1;
+  text-align: center;
+  padding: 10px 12px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--color-text);
+  border-radius: calc(var(--radius-sm) - 2px);
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.theme-option:hover {
+  background: var(--color-border);
+}
+
+/* Foco visível ao navegar pelos radios via Tab (eles ficam escondidos,
+   mas o label correspondente recebe o destaque de foco) */
+.theme-input:focus-visible + .card .theme-switch .theme-option {
+  outline: none;
+}
+
+#theme-light:focus-visible ~ .card .theme-option:nth-child(1),
+#theme-dark:focus-visible ~ .card .theme-option:nth-child(2),
+#theme-custom:focus-visible ~ .card .theme-option:nth-child(3) {
+  outline: 3px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+h1 {
+  margin: 0 0 12px 0;
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--color-text);
+}
+
+p {
+  margin: 0 0 24px 0;
+  color: var(--color-text-muted);
+  line-height: 1.5;
+}
+
+.primary-btn {
+  padding: 14px 24px;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-accent-text);
+  background: var(--color-accent);
+  border: none;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: opacity 0.15s ease;
+}
+
+.primary-btn:hover {
+  opacity: 0.88;
+}
+
+/* ============================================= */
+/* Troca de tema: o combinador geral de irmão (~) aplica os tokens
+   do tema ao .card sempre que o radio correspondente está marcado.
+   Como .card referencia só var(--color-...), nada precisa ser
+   redefinido além dos tokens em si. */
+/* ============================================= */
+
+/* --- Tema Dark --- */
+#theme-dark:checked ~ .card {
+  --color-bg: #15161a;
+  --color-surface: #15161a;
+  --color-text: #f4f4f5;
+  --color-text-muted: #a1a1aa;
+  --color-accent: #3b5bdb;
+  --color-accent-text: #ffffff;
+  --color-border: #2a2b31;
+}
+
+/* --- Tema Custom (tons de verde/creme) --- */
+#theme-custom:checked ~ .card {
+  --color-bg: #faf6ea;
+  --color-surface: #faf6ea;
+  --color-text: #1f3d2b;
+  --color-text-muted: #5c7262;
+  --color-accent: #2f8f4e;
+  --color-accent-text: #ffffff;
+  --color-border: #e3dcc3;
+}
+
+/* Destaca visualmente qual opção está ativa no seletor de tema,
+   usando a ordem dos labels (1º = Light, 2º = Dark, 3º = Custom) */
+#theme-light:checked ~ .card .theme-option:nth-child(1),
+#theme-dark:checked ~ .card .theme-option:nth-child(2),
+#theme-custom:checked ~ .card .theme-option:nth-child(3) {
+  background: var(--color-accent);
+  color: var(--color-accent-text);
+}
+
+/* Bônus (seletor moderno :has()): a página por trás do card também
+   escurece quando o tema Dark está ativo, usando :has() no body
+   para "olhar para dentro" do DOM sem precisar de JavaScript. */
+body:has(#theme-dark:checked) {
+  background: #0c0d10;
+}
+
+body:has(#theme-custom:checked) {
+  background: #f5f1e4;
+}

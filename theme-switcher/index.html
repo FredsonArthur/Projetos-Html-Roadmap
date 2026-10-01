@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Theme Switcher with CSS Variables</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="theme-root">
+      <!-- Radios escondidos via CSS, mas continuam focáveis/navegáveis por teclado -->
+      <input type="radio" name="theme" id="theme-light" class="theme-input" checked />
+      <input type="radio" name="theme" id="theme-dark" class="theme-input" />
+      <input type="radio" name="theme" id="theme-custom" class="theme-input" />
+
+      <div class="card">
+        <div class="theme-switch" role="radiogroup" aria-label="Theme">
+          <label for="theme-light" class="theme-option">Light</label>
+          <label for="theme-dark" class="theme-option">Dark</label>
+          <label for="theme-custom" class="theme-option">Custom</label>
+        </div>
+
+        <h1>Hello, World!</h1>
+        <p>This is a simple card that changes theme with CSS variables.</p>
+
+        <button type="button" class="primary-btn">Primary Button</button>
+      </div>
+    </main>
+  </body>
+</html>
