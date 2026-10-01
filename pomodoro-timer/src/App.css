@@ -1,0 +1,64 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  background: #1a1a2e;
+  color: #fff;
+  min-height: 100vh;
+}
+
+.app {
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 48px 20px;
+  text-align: center;
+}
+
+.app h1 {
+  margin: 0 0 32px 0;
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+.session-count {
+  margin: 24px 0;
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.session-count strong {
+  color: #fff;
+  font-size: 1.1rem;
+}
+
+.settings-toggle {
+  margin-top: 24px;
+  padding: 10px 20px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.settings-toggle:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.settings-toggle:focus-visible {
+  outline: 3px solid #fff;
+  outline-offset: 2px;
+}
+
+/* Responsivo: em telas bem pequenas, reduz o padding lateral */
+@media (max-width: 380px) {
+  .app {
+    padding: 32px 14px;
+  }
+}
