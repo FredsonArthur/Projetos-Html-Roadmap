@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>24hr Story Feature</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="app">
+      <h1 class="visually-hidden">Stories</h1>
+
+      <!-- Lista de stories: botão de + sempre primeiro, bolhas inseridas pelo JS -->
+      <div class="story-bar" id="story-bar">
+        <button type="button" class="add-story-btn" id="add-story-btn" aria-label="Add story">
+          +
+        </button>
+        <!-- Bolhas de stories são inseridas aqui via JS -->
+      </div>
+
+      <!-- Input de arquivo escondido, acionado pelo botão + -->
+      <input
+        type="file"
+        id="file-input"
+        accept="image/*"
+        class="visually-hidden"
+      />
+
+      <!-- Viewer em tela cheia, escondido até um story ser clicado -->
+      <div class="story-viewer hidden" id="story-viewer">
+        <div class="progress-track" id="progress-track">
+          <!-- Barras de progresso (uma por story) inseridas via JS -->
+        </div>
+
+        <button type="button" class="close-btn" id="close-btn" aria-label="Close story">
+          ✕
+        </button>
+
+        <div class="viewer-nav-zone left" id="prev-zone" aria-label="Previous story"></div>
+        <div class="viewer-nav-zone right" id="next-zone" aria-label="Next story"></div>
+
+        <img src="" alt="" class="viewer-image" id="viewer-image" />
+      </div>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
